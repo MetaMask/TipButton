@@ -11,15 +11,27 @@ Usage is very easy:
 ```
 
 ```css
-.tip-button:hover {
+.tip-button {
   width: 304px;
   height: 89px;
+  background-size: 100%;
+  background-image: url('images/1_pay_mm_off.png');
+  cursor: pointer;
+}
+
+.tip-button:hover {
+  background-image: url('images/1_pay_mm_over.png');
+}
+
+.tip-button:active {
+  background-image: url('images/1_pay_mm_off.png');
 }
 ```
 
 ```javascript
-document.addEventListener('img.tip-button', function() {
-  var user_address = web3.eth.accounts[0]
+var tipButton = document.querySelector('.tip-button')
+tipButton.addEventListener('click', function() {
+ var user_address = web3.eth.accounts[0]
 
   if (typeof web3 === 'undefined') {
     return renderMessage('You need to install MetaMask to use this feature.  https://metamask.io')
