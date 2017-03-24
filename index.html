@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <title>MetaMask Tip Button Example</title>
+
+<style>
+
+.tip-button {
+  width: 304px;
+  height: 89px;
+  background-image: url('images/1_pay_mm_off.png');
+}
+
+.tip-button:hover {
+  background-image: url('images/1_pay_mm_over.png');
+}
+
+</style>
+
+
+  </head>
+
+  <body>
+    <h1>MetaMask Tip Button Example</h1>
+    <div class="tip-button">
+    <div class="message"></div>
+  </body>
+
+<script>
+
+var MY_ADDRESS = '0x55e2780588aa5000F464f700D2676fD0a22Ee160'
+
+document.addEventListener('img.tip-button', function() {
+  var user_address = web3.eth.accounts[0]
+
+  if (typeof web3 === 'undefined') {
+    return renderMessage('You need to install MetaMask to use this feature.  https://metamask.io')
+  }
+
+  web3.eth.sendTransaction({
+    to: MY_ADDRESS,
+    from: user_address,
+    value: web3.toWei('1', 'ether'),
+  }, function (err, transactionHash) {
+    if (err) return renderMessage('There was a problem!: ' + err.message)
+
+    // If you get a transactionHash, you can assume it was sent,
+    // or if you want to guarantee it was received, you can poll
+    // for that transaction to be mined first.
+    renderMessage('Thanks for the generosity!!')
+  })
+})
+
+function renderMessage (message) {
+  var messageEl = document.querySelector('.message')
+  messageEl.innerText = message
+}
+
+</script>
+
+</html>
