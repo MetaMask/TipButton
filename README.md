@@ -31,12 +31,11 @@ Usage is very easy:
 ```javascript
 var tipButton = document.querySelector('.tip-button')
 tipButton.addEventListener('click', function() {
- var user_address = web3.eth.accounts[0]
-
   if (typeof web3 === 'undefined') {
     return renderMessage('You need to install MetaMask to use this feature.  https://metamask.io')
   }
 
+  var user_address = web3.eth.accounts[0]
   web3.eth.sendTransaction({
     to: YOUR_ADDRESS,
     from: user_address,
