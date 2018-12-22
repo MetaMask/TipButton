@@ -71,10 +71,10 @@ tipButton.addEventListener('click', function() {
 3_pay_mm_over.png
 ![](images/3_pay_mm_over.png)
 
-4_pay_mm_over.png
+4_pay_mm_off.png
 ![](images/4_pay_mm_off.png)
 
-4_pay_mm_over
+4_pay_mm_over.png
 ![](images/4_pay_mm_over.png)
 
 3_pay_mm_over.png
