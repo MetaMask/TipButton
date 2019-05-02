@@ -1,6 +1,6 @@
 # Pay With MetaMask Buttons
 
-[Live example](https://metamask.github.io/TipButton/)
+[Live example](https://wapettyjohn.github.io/TipButton/)
 
 A variety of MetaMask approved buttons for use on your own website to suggest that your users pay with MetaMask!
 
