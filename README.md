@@ -30,6 +30,7 @@ Usage is very easy:
 
 ```javascript
 var tipButton = document.querySelector('.tip-button');
+
 const tipUser = () => {
     var user_address = web3.eth.accounts[0];
     web3.eth.sendTransaction({
@@ -44,6 +45,7 @@ const tipUser = () => {
 	renderMessage('Thanks!');
     });
 }
+
 tipButton.addEventListener('click', async () => {
     // Modern dapp browsers...
     if (window.ethereum) {
